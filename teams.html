@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teams.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+
+        <img src="images/logo.png" class="logo" alt="logo">
+        <h1 class="heading">Страница игры</h1>
+
+        <button id="menu-button">
+
+            <div class="header-menu"> <img src="images/icon.png" alt="icon"></div>
+         </button>
+
+
+         <nav id="navbar" class="navbar">
+             <ul class="ul-menu">
+                 <li class="li-menu-item">
+                     <a class="a-menu" href="index.html">Главная</a>
+                 </li>
+                 <li class="li-menu-item">
+                     <a class="a-menu" href="teams.html">Игра</a>
+                 </li>
+                 <li class="li-menu-item">
+                     <a class="a-menu" href="rules.html">Правила</a>
+                 </li>
+             </ul>
+         </nav>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="ul-menu">
+                <li class="li-menu-item">
+                    <a class="a-menu" href="index.html">Главная</a>
+                </li>
+                <li class="li-menu-item">
+                    <a class="a-menu" href="teams.html">Игра</a>
+                </li>
+                <li class="li-menu-item">
+                    <a class="a-menu" href="rules.html">Правила</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="teams-container">
+        <h1>Команды:</h1>
+        <article class="teams-form">
+            <section class="teams-item">
+                <i class="teams-icon"></i>
+                <input class="teams-name" placeholder="Котики"/>
+            </section>
+
+            <section class="teams-item">
+                <i class="teams-icon"></i>
+                <input class="teams-name" placeholder="Пуфики"/>
+            </section>
+        </article>
+
+        <button class="teams-btn-add">Добавить команду</button>
+
+        <h1>Количество раундов:</h1>
+        <section class="round">
+            <p class="round-text"></p>
+            <button class="round-btn-add">Добавить</button>
+            <button class="round-btn-sub">Отнять</button>
+        </section>
+
+        <h1>Время на раунд:</h1>
+        <section class="time-round">
+            <p class="time-text">
+                <button class="time-btn-add">Увеличить</button>
+                <button class="time-dtn-sub">Уменьшить</button>
+            </p>
+        </section>
+
+        <h1>Набор слов</h1>
+        <section class="dictionaries">
+            <!--Продумать в js выборку словаря-->
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="contacts">
+            <h2>Contact Us</h2>
+            <a href="https://play.google.com/store/apps/details?id=com.inetstd.android.alias" class="google-play-link"><i class="fab fa-google-play"></i></a>
+            <a href="https://www.facebook.com/Homegameby" class="facebook-link"><i class="fab fa-facebook"></i></a>
+            <a href="https://m.twitch.tv/" class="twitch-link"><i class="fab fa-twitch"></i></a>
+        </div>
+        <h3>@ Copyright Шабан Анастасия</h3>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

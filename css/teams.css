@@ -1,0 +1,33 @@
+
+
+.teams-container {
+    text-align: center;
+    padding: 50px;
+    line-height: 2.5;
+}
+
+.teams-btn-add,
+.round-btn-add,
+.time-btn-add {
+    padding: 7px;
+    border-radius: 40px;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: olivedrab;
+    color: white;
+    cursor: pointer;
+}
+
+.teams-btn-sub,
+.round-btn-sub,
+.time-dtn-sub {
+    padding: 7px;
+    border-radius: 40px;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: darkorange;
+    color: white;
+    cursor: pointer;
+}
