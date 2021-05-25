@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <div class="teams-container">
+    <section class="teams-container">
         <h1>Команды:</h1>
         <article class="teams-form">
             <section class="teams-item">
@@ -67,27 +67,42 @@
 
         <button class="teams-btn-add">Добавить команду</button>
 
-        <h1>Количество раундов:</h1>
-        <section class="round">
-            <p class="round-text"></p>
-            <button class="round-btn-add">Добавить</button>
-            <button class="round-btn-sub">Отнять</button>
-        </section>
+<!--******************************************************************* -->
 
-        <h1>Время на раунд:</h1>
-        <section class="time-round">
-            <p class="time-text">
-                <button class="time-btn-add">Увеличить</button>
-                <button class="time-dtn-sub">Уменьшить</button>
-            </p>
-        </section>
+        <div class="count-round">
+            <h1>Количество раундов:</h1>
+            <section class="round">
+                <p class="round-text">100</p>
+                <div class="teams-btn">
+                    <button class="round-btn-add">Добавить</button>
+                    <button class="round-btn-sub">Отнять</button>
+                </div>
+            </section>
+        </div>
 
-        <h1>Набор слов</h1>
-        <section class="dictionaries">
-            <!--Продумать в js выборку словаря-->
-        </section>
+        <div class="time-round">
+            <h1>Время на раунд:</h1>
+            <section class="time-round-section">
+                <p class="time-text">100</p>
+                <div class="teams-btn">
+                    <button class="time-btn-add">Увеличить</button>
+                    <button class="time-dtn-sub">Уменьшить</button>
+                </div>
+            </section>
+        </div>
 
-    </div>
+        <div class="dictionaries">
+            <h1>Набор слов</h1>
+            <section class="dictionaries-section">
+                <!--Продумать в js выборку словаря-->
+                <button class="game-btn">Играть</button>
+            </section>
+
+
+        </div>
+
+
+    </section>
 
     <footer class="footer">
         <div class="contacts">

@@ -1,10 +1,17 @@
 
-
 .teams-container {
     text-align: center;
     padding: 50px;
     line-height: 2.5;
 }
+
+.count-round,
+.time-round,
+.dictionaries {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .teams-btn-add,
 .round-btn-add,
@@ -30,4 +37,98 @@
     background: darkorange;
     color: white;
     cursor: pointer;
+}
+
+.game-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(255, 115, 0);
+    width: 100px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.game-btn:hover {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background: rgb(255, 115, 0);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/*media queries*/
+@media (max-width:700px) {
+
+    .teams-container {
+        padding: 30px;
+    }
+
+    /* div */
+    .count-round,
+    .time-round,
+    .dictionaries {
+        padding: 12px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* section */
+    .round,
+    .time-round-section {
+        display: flex;
+        border: 2px solid black;
+        padding: 5px;
+    }
+
+    .round-text,
+    .time-text {
+        padding-top: 20px;
+    }
+
+    .teams-btn {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px;
+        align-items: center;
+    }
+
+
+    .round-btn-add,
+    .time-btn-add {
+        display: flex;
+        padding: 7px;
+        border-radius: 20px;
+        border: none;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+
+    .round-btn-sub,
+    .time-dtn-sub {
+        padding: 7px;
+        border-radius: 20px;
+        border: none;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+
+
+
+    .game-btn {
+        font-size: 12px;
+    }
+
+    .game-btn:hover {
+        font-size: 12px;
+    }
+
 }
