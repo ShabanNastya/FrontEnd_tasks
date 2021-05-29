@@ -3,10 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-
 }
 
-/* TODO исправь отступы*/
 html {
     font-size: 10px;
     overflow-x: hidden;
@@ -35,8 +33,6 @@ html {
     display: none;
 }
 
-/* TODO попытайся использовать стиль */
-/* class="ul-class" */
 .ul-menu {
     display: flex;
     align-items: center;
@@ -144,6 +140,12 @@ html {
 
 
 /*media queries*/
+@media (min-width:700px) {
+    .navbar {
+        display: contents;
+    }
+}
+
 @media (max-width:700px) {
     .header {
         display: flex;
@@ -158,10 +160,6 @@ html {
 
     .header-menu {
         display: block;
-    }
-
-    .navbar {
-        display: none;
     }
 
     .ul-menu {
