@@ -12,7 +12,6 @@
     flex-direction: column;
 }
 
-
 .teams-btn-add,
 .round-btn-add,
 .time-btn-add {
@@ -62,15 +61,12 @@
 }
 
 
-
 /*media queries*/
 @media (max-width:700px) {
-
     .teams-container {
         padding: 30px;
     }
 
-    /* div */
     .count-round,
     .time-round,
     .dictionaries {
@@ -79,7 +75,6 @@
         justify-content: space-around;
     }
 
-    /* section */
     .round,
     .time-round-section {
         display: flex;
@@ -99,7 +94,6 @@
         align-items: center;
     }
 
-
     .round-btn-add,
     .time-btn-add {
         display: flex;
@@ -110,7 +104,6 @@
         letter-spacing: 1px;
     }
 
-
     .round-btn-sub,
     .time-dtn-sub {
         padding: 7px;
@@ -120,9 +113,6 @@
         letter-spacing: 1px;
     }
 
-
-
-
     .game-btn {
         font-size: 12px;
     }
@@ -130,5 +120,4 @@
     .game-btn:hover {
         font-size: 12px;
     }
-
 }
