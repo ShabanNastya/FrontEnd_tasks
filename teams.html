@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/databaseHelper.js"></script>
+
     <title>Teams Page</title>
 
     <link rel="shortcut icon" href="images/small-logo.png" type="image/x-icon">
@@ -32,7 +38,13 @@
                      <a class="a-menu" href="teams.html">Игра</a>
                  </li>
                  <li class="li-menu-item">
+                     <a class="a-menu" href="crud.html">Словари</a>
+                 </li>
+                 <li class="li-menu-item">
                      <a class="a-menu" href="rules.html">Правила</a>
+                 </li>
+                 <li class="li-menu-item">
+                     <a class="a-menu" href="statistics.html">Статистика</a>
                  </li>
              </ul>
          </nav>
@@ -42,12 +54,10 @@
         <h1>Команды:</h1>
         <article class="teams-form">
             <section class="teams-item">
-                <i class="teams-icon"></i>
                 <input class="teams-name" placeholder="Котики"/>
             </section>
 
             <section class="teams-item">
-                <i class="teams-icon"></i>
                 <input class="teams-name" placeholder="Пуфики"/>
             </section>
         </article>
@@ -73,22 +83,19 @@
                 <p class="time-text">100</p>
                 <div class="teams-btn">
                     <button class="time-btn-add">Увеличить</button>
-                    <button class="time-dtn-sub">Уменьшить</button>
+                    <button class="time-btn-sub">Уменьшить</button>
                 </div>
             </section>
         </div>
 
         <div class="dictionaries">
-            <h1>Набор слов</h1>
-            <section class="dictionaries-section">
-                <!--Продумать в js выборку словаря-->
-                <button class="game-btn">Играть</button>
-            </section>
-
-
+            <h1 class="set-words">Набор слов</h1>
+            <select class="dictionaries-option">
+                <option value="Выберите словарь">Выберите словарь</option>
+            </select>
+            <section class="dictionaries-list"></section>
         </div>
-
-
+        <button class="game-btn">Играть</button>
     </section>
 
     <footer class="footer">
@@ -100,7 +107,7 @@
         </div>
         <h3>@ Copyright Шабан Анастасия</h3>
     </footer>
-
+    <script type="module" src="js/teams.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

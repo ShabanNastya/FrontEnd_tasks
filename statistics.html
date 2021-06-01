@@ -4,41 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Page</title>
+    <title>Statistics Page</title>
 
     <link rel="shortcut icon" href="images/small-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/statistics.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-
 <body>
 <header class="header">
+
     <img src="images/logo.png" class="logo" alt="logo">
-    <h1 class="heading">Игра</h1>
+    <h1 class="heading">Страница статистики</h1>
 
     <button id="menu-button">
 
         <div class="header-menu"> <img src="images/icon.png" alt="icon"></div>
     </button>
+
+    <nav id="mobile-menu" class="navbar mobile-menu">
+        <ul class="ul-menu">
+            <li class="li-menu-item">
+                <a class="a-menu" href="index.html">Главная</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="teams.html">Игра</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="crud.html">Словари</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="rules.html">Правила</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="statistics.html">Статистика</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <div class="field">
-    <div>
-        <section class="teams-name"></section>
-        <section class="timer"></section>
-    </div>
-
-    <div class="container">
-        <article class="container-card">
-            <p class="current-word"></p>
-        </article>
-    </div>
-
-    <article class="state"></article>
-    <button class="start">GO!</button>
+    <h1 class="statistics-text">Ваша статистика</h1>
+    <main class="statistics"></main>
 </div>
-
 
 <footer class="footer">
     <div class="contacts">
@@ -49,6 +57,8 @@
     </div>
     <h3>@ Copyright Шабан Анастасия</h3>
 </footer>
-<script src="/js/game.js"></script>
+
+<script src="/js/statistics.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
