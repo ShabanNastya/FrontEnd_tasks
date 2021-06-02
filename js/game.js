@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function playCardAudio() {
     const audio = new Audio();
-    audio.src = "/images/sound.mp3";
+    audio.src = "images/sound.mp3";
     audio.play();
   }
 
