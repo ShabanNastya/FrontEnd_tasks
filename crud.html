@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/databaseHelper.js"></script>
+
+    <title>CRUD Page</title>
+
+    <link rel="shortcut icon" href="images/small-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/crud.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<header class="header">
+
+    <img src="images/logo.png" class="logo" alt="logo">
+    <h1 class="heading">Настройка словарей</h1>
+
+    <button id="menu-button">
+
+        <div class="header-menu"> <img src="images/icon.png" alt="icon"></div>
+    </button>
+
+    <nav id="mobile-menu" class="navbar mobile-menu">
+        <ul class="ul-menu">
+            <li class="li-menu-item">
+                <a class="a-menu" href="index.html">Главная</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="teams.html">Игра</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="crud.html">Словари</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="rules.html">Правила</a>
+            </li>
+            <li class="li-menu-item">
+                <a class="a-menu" href="statistics.html">Статистика</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="crud-container">
+    <div class="position">
+        <input class="dictionaries" type="text" placeholder="Название нового словаря">
+        <button class="add-dictionaries">+</button>
+    </div>
+
+    <div class="position">
+        <select class="dictionaries-select">
+            <option value="Выберите словарь">Выберите словарь</option>
+        </select>
+        <button class="dictionaries-remove">Delete</button>
+    </div>
+
+    <div class="position">
+        <input placeholder="Новое слово" class="riddle-word">
+        <button class="add-word">+</button>
+    </div>
+
+</div>
+<main class="list"></main>
+
+
+<footer class="footer">
+    <div class="contacts">
+        <h2>Contact Us</h2>
+        <a href="https://play.google.com/store/apps/details?id=com.inetstd.android.alias" class="google-play-link"><i class="fab fa-google-play"></i></a>
+        <a href="https://www.facebook.com/Homegameby" class="facebook-link"><i class="fab fa-facebook"></i></a>
+        <a href="https://m.twitch.tv/" class="twitch-link"><i class="fab fa-twitch"></i></a>
+    </div>
+    <h3>@ Copyright Шабан Анастасия</h3>
+</footer>
+<script type="module" src="js/crud.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
