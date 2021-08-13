@@ -11,12 +11,14 @@
   padding: 20px;
 }
 
-.dictionaries,
+.new-word,
 .riddle-word{
-  padding: 3px;
   border: 1px solid #ced4da;
-  border-radius: 30px;
+  border-radius: 10px;
   background: #fafafa;
+  padding: 5px 10px;
+  width: 250px;
+  height: 30px;
 }
 
 .add-dictionaries,
@@ -30,6 +32,7 @@
   background: olivedrab;
   color: white;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .list-update {
@@ -48,7 +51,8 @@
 
 .dictionaries-remove,
 .list-remove {
-  padding: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
   border-radius: 40px;
   border: none;
   letter-spacing: 1px;
@@ -60,6 +64,9 @@
 
 .dictionaries-select,
 .list-word-old{
+  padding: 5px 10px;
+  width: 210px;
+  height: 30px;
   background-color: #fafafa;
   border-radius: 7px;
 }

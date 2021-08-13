@@ -10,6 +10,21 @@ html {
     overflow-x: hidden;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
 .header {
     box-shadow: 0 .1rem .3rem darkblue;
 }
@@ -108,6 +123,8 @@ html {
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
+    outline: none;
+    border: none;
 }
 
 .image-alias {
@@ -121,7 +138,6 @@ html {
 .footer {
     background-color: rgb(255, 115, 0);
     padding-left: 20px;
-    position: absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
@@ -139,6 +155,10 @@ html {
     font-size: 15px;
 }
 
+.text-copyright{
+    position: relative;
+    top: 40%;
+}
 
 /*media queries*/
 @media (min-width:700px) {
@@ -202,9 +222,15 @@ html {
 
     .footer {
         text-align: center;
+        height: 70px;
     }
 
     .contacts {
         text-align: center;
+        margin-top: 10px;
+    }
+
+    .text-copyright {
+        top: 10px;
     }
 }

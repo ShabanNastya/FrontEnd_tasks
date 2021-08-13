@@ -1,8 +1,32 @@
 
 .teams-container {
     text-align: center;
-    /*padding: 50px;*/
     line-height: 2.5;
+}
+
+.teams-container h1 {
+    margin-top: 10px;
+}
+
+.teams-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dictionaries-list {
+    width: 250px;
+    height: 30px;
+    padding: 0px 5px; 
+}
+
+.teams-item input {
+    padding: 10px 5px; 
+    height: 30px;
+    width: 250px;
+}
+
+.teams-btn-remove {
+    margin-left: 20px;
 }
 
 .count-round,
@@ -37,6 +61,7 @@
     background: darkorange;
     color: white;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .round-text,
@@ -54,6 +79,7 @@
     letter-spacing: 2px;
     background-color: white;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .game-btn:hover {
@@ -122,6 +148,7 @@
         border: none;
         font-size: 10px;
         letter-spacing: 1px;
+        margin: 10px 0 0;
     }
 
     .game-btn {

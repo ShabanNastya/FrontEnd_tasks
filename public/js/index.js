@@ -1,7 +1,8 @@
 import {
     generateFooter,
     generateHeader, 
-    generateMainContainer
+    generateMainContainer,
+    generateMainPage,
 } from './main.js';
 import { generateSettings } from './game.js';
 import { generateStatistics } from './statistics.js';
@@ -13,15 +14,23 @@ const navigateTo = url => {
     history.pushState(null, null, url);
 };
 
-
 window.onload = () => {
     const { pathname } = window.location;
+
+    if (pathname === ROUTERS.root) {
+        generateHeader(ROUTERS.main);
+    } else {
+        generateHeader(pathname);
+    }
+
+    generateMainContainer();
+    generateFooter();
 
     switch (pathname) {
         case ROUTERS.root:
         case ROUTERS.main:
             navigateTo(ROUTERS.main);
-            generateMainContainer();
+            generateMainPage();
             break;
         case ROUTERS.game: 
             generateSettings();
@@ -32,15 +41,12 @@ window.onload = () => {
             generateStatistics();
             break;
         case ROUTERS.rules:
-            navigateTo(ROUTERS.statistics);
+            navigateTo(ROUTERS.rules);
             generateRules();
             break;
         case ROUTERS.dictionary:
-            navigateTo(ROUTERS.statistics);
+            navigateTo(ROUTERS.dictionary);
             generateDictionary();
             break;
     }
-
-    generateHeader(pathname);
-    generateFooter();
 };

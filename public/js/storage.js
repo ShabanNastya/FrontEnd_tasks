@@ -1,0 +1,37 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyArJ0UO0rPnqt3E70jFBHlZh4fUhOc6HSI",
+    authDomain: "alias-3052f.firebaseapp.com",
+    projectId: "alias-3052f",
+    storageBucket: "alias-3052f.appspot.com",
+    messagingSenderId: "533741029384",
+    appId: "1:533741029384:web:4eb31b89dcf026bb00a9bd",
+    measurementId: "G-YZWLKV4NK5"
+};
+
+class Storage {
+    constructor() {
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            firebase.app(); // if already initialized, use that one
+        }
+        
+        this.database = firebase.firestore();
+    }
+
+    getStatistics() {
+        return this.database.collection("statistics").get()
+        .then((snapshot) => {
+            return snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+              })
+            );
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+    }
+}
+
+export default new Storage();

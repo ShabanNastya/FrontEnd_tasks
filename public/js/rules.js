@@ -8,7 +8,9 @@ function generateBoxRightOne() {
             '            takes a position where other players cannot see the screen and presses the button to start the round'});
 
     const divBoxRight = createElement({tagName: 'div', classNames: 'box-right', children: [pRightStep, pRightNumber]});
-    document.body.append(divBoxRight);
+    
+    const main = document.querySelector('main');
+    main.append(divBoxRight);
 }
 
 function generateBoxLeft() {
@@ -19,8 +21,9 @@ function generateBoxLeft() {
             '            the team will receive a penalty point'});
 
     const divBoxLeft = createElement({tagName: 'div', classNames: 'box-left', children: [pLeftStep, pLeftNumber]});
-    document.body.append(divBoxLeft);
 
+    const main = document.querySelector('main');
+    main.append(divBoxLeft);
 }
 
 function generateBoxRightThird() {
@@ -31,7 +34,9 @@ function generateBoxRightThird() {
     const divBoxRight = createElement({tagName: 'div', classNames: 'box-right', children: [pRightStep, pRightNumber], attrs: [
         ['style','margin-top: 290px'],
         ]});
-    document.body.append(divBoxRight);
+
+    const main = document.querySelector('main');
+    main.append(divBoxRight);
 }
 
 function generateRules() {

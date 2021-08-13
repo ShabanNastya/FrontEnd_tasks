@@ -31,12 +31,6 @@ function generateHeader(pathname) {
 
         ul.append(li);
     });
-
-
-    // header.append(imageLogo);
-    // header.append(title);
-    // header.append(nav);
-
     nav.append(ul);
 
     const header = createElement({tagName: 'header', classNames: 'header', children: [imageLogo, title, nav]});
@@ -44,53 +38,65 @@ function generateHeader(pathname) {
     document.body.prepend(header);
 }
 
-function generateMainContainer(){
-    //br????????
-    console.log(window.location.href);
+function generateMainPage() {
     const textSubtitle = createElement({tagName: 'h2'});
     textSubtitle.insertAdjacentHTML('afterbegin', `It's not just a game!<br>It's <span class="home__item">Alias!</span>`);
 
-   // const spanAlias = createElement({tagName: 'span', classNames: 'home__item', textContent: 'It\'s Alias'});
     const textAds = createElement({tagName: 'p', classNames: 'main-text', textContent: 'Alias is a fun word explanation game that is played in teams of 2 or more people.'});
-    //const aGame = createElement({tagName: 'a', classNames: 'a-game', attrs: 'teams.html'});
-    const playBtn =  createElement({tagName: 'button', classNames: 'a-game', textContent: 'Let\'s play'});
 
+    const playBtn =  createElement({tagName: 'button', classNames: 'a-game', textContent: 'Let\'s play', attrs:[
+        'href', 'teams.html',
+    ],});
+    
     const mainText = createElement({tagName: 'div', classNames: 'main-text', children: [textSubtitle, textAds, playBtn]});
-    //picture????
-    const mainImage = createElement({
-        tagName: 'img',
-        classNames: 'image-alias',
-        attrs:[
-            ['alt', 'alias-cards'],
-            ['src','images/small-logo.png'],
-        ]});
+    const mainContainer = createElement({tagName: 'div', classNames: 'main-container', children: [mainText]});
 
-    const mainContainer = createElement({tagName: 'div', classNames: 'main-container', children: [mainText, mainImage]});
+    mainContainer.insertAdjacentHTML('beforeend',
+        `<picture>
+            <source media="(min-width: 750px)" srcset="images/logo.png" class="image-alias">
+            <source media="(min-width: 550px)" srcset="images/medium-logo.png" class="image-alias">
+            <img src="images/small-logo.png" class="image-alias" alt="alias-cards">
+        </picture>`
+    );
 
-    document.body.append(mainContainer);
+    const main = document.querySelector('main');
+    main.append(mainContainer);
+
+    playBtn.addEventListener('click', () => {
+        window.location.href = '/game';
+    });
 }
 
 function generateFooter() {
-    const textCopyright = createElement({tagName: 'h3', textContent: '@ Copyright Шабан Анастасия'});
+    const textCopyright = createElement({tagName: 'h3', classNames: 'text-copyright', textContent: '@ Copyright Shaban Anastasiya'});
+    
     const contactUs = createElement({tagName: 'h2', textContent: 'Contact Us'});
-
-    //?????btn a
-    const btnGooglePlay = createElement({tagName: 'a', classNames: 'btn-google-play', attrs:[
-        ['href','https://play.google.com/store/apps/details?id=com.inetstd.android.alias'],
-        ]});
-    console.log(btnGooglePlay);
-
-    //const contacts = createElement({tagName: 'h2', textContent: 'Contact Us'});
-    const footer = createElement({tagName: 'footer', classNames: 'footer', children: [textCopyright,btnGooglePlay]});
-
-    //document.body.append(btnGooglePlay);
+    const iGooglePlay = createElement({tagName: 'i', classNames: 'fab fa-google-play'});
+    const aGooglePlay = createElement({tagName: 'a', classNames: 'google-play-link', children: [iGooglePlay], attrs: [
+        ['href', 'https://play.google.com/store/apps/details?id=com.inetstd.android.alias'],
+    ]});
+    const iFacebook = createElement({tagName: 'i', classNames: 'fab fa-facebook'});
+    const aFacebook = createElement({tagName: 'a', classNames: 'facebook-link', children: [iFacebook], attrs: [
+        ['href', 'https://www.facebook.com/Homegameby'],
+    ]});
+    const iTwitch = createElement({tagName: 'i', classNames: 'fab fa-twitch'});
+    const aTwitch = createElement({tagName: 'a', classNames: 'twitch-link', children: [iTwitch], attrs: [
+        ['href', 'https://m.twitch.tv/'],
+    ]});
+    const contacts = createElement({tagName: 'div', classNames: 'contacts', children: [contactUs, aGooglePlay, aFacebook, aTwitch]})
+    const footer = createElement({tagName: 'footer', classNames: 'footer', children: [textCopyright, contacts]});
     document.body.append(footer);
+}
+
+function generateMainContainer() {
+    const main = createElement({ tagName: 'main' });
+    document.body.append(main);
 }
 
 export {
     generateHeader,
-
     generateMainContainer,
+    generateMainPage,
     generateFooter,
 };
 
