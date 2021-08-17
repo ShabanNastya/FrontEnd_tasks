@@ -11,13 +11,14 @@
   padding: 20px;
 }
 
+.new-dictionary,
 .new-word,
 .riddle-word{
   border: 1px solid #ced4da;
   border-radius: 10px;
   background: #fafafa;
   padding: 5px 10px;
-  width: 250px;
+  width: 260px;
   height: 30px;
 }
 
@@ -50,6 +51,7 @@
 }
 
 .dictionaries-remove,
+.word-remove,
 .list-remove {
   margin-left: 5px;
   padding: 5px 10px;
@@ -63,6 +65,7 @@
 }
 
 .dictionaries-select,
+.list-words,
 .list-word-old{
   padding: 5px 10px;
   width: 210px;

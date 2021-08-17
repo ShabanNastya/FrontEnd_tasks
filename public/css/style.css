@@ -14,6 +14,10 @@ table {
     border-collapse: collapse;
 }
 
+input, select {
+    outline: none;
+}
+
 body {
    display: flex;
    flex-direction: column;
