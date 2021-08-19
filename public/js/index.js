@@ -4,7 +4,7 @@ import {
     generateMainContainer,
     generateMainPage,
 } from './main.js';
-import { generateSettings } from './game.js';
+import { generateSettings } from './settings.js';
 import { generateStatistics } from './statistics.js';
 import { generateRules } from './rules.js';
 import { generateDictionary } from './dictionary.js';
