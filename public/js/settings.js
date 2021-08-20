@@ -1,31 +1,20 @@
 import createElement from './helper.js';
 import Storage from './storage.js';
+import { chunkArray  } from './utils.js';
+import { generateGame } from './game.js';
 
 const TEAMS = [
     { placeholder: 'Cats' },
     { placeholder: 'Bees' },
 ];
 
-const COUNT_GAMES = 2;
-
-function chunkArray(myArray, chunk_size){
-    let index = 0;
-    const arrayLength = myArray.length;
-    const tempArray = [];
-
-    for (index = 0; index < arrayLength; index += chunk_size) {
-        const myChunk = myArray.slice(index, index+chunk_size);
-        tempArray.push(myChunk);
-    }
-
-    return tempArray;
-}
+const COUNT_ROUNDS = 2;
 
 function generateSectionTeams() {
     const textTeams = createElement({tagName: 'h1', textContent: 'Teams:'});
-
+    
     const articleTeams = createElement({tagName: 'article', classNames: 'teams-form'});
-
+    
     TEAMS.forEach((team) => {
         const sectionTeams = createElement({tagName: 'section', classNames: 'teams-item'});
         const inputTeams = createElement({ tagName: 'input', classNames: 'teams-name',
@@ -78,9 +67,9 @@ async function generateSectionDictionaries() {
     const btnGame = createElement({tagName: 'button', classNames: 'game-btn', textContent: 'Play'});
 
     const textDictionaries = createElement({tagName: 'h1', classNames: 'set-words', textContent: 'Set of words'});
-
+    
     const options = await Storage.getDictionaries();
-
+    
     const selectDictionary = createElement({tagName: 'select', classNames: 'dictionaries-list'});
 
     options.forEach((item) => {
@@ -96,7 +85,7 @@ async function generateSectionDictionaries() {
         selectDictionary.append(sectionDictionariesOption);
     })
 
-
+    
     const container = createElement({tagName: 'div', children: [textDictionaries, selectDictionary]});
 
     sectionTeams.append(container);
@@ -119,7 +108,7 @@ function addEvents () {
         const deleteBtn = createElement({ tagName: 'button', classNames: 'teams-btn-remove', textContent: 'Remove' });
 
         const sectionTeam = createElement({ tagName: 'section', classNames: 'teams-item', children: [inputTeams, deleteBtn] });
-
+        
         articleTeams.append(sectionTeam);
 
         deleteBtn.addEventListener('click', () => {
@@ -173,7 +162,7 @@ function playBtnListener() {
 
     playBtn.addEventListener('click', async () => {
         localStorage.clear();
-
+        
         const select = document.querySelector('select');
         const dictionaryId = select.options[select.selectedIndex].value;
         const dictionary = await Storage.getDictionaryById(dictionaryId);
@@ -183,8 +172,8 @@ function playBtnListener() {
 
         const numberWordsElement = document.querySelector('.round-text');
         const numberWords = +numberWordsElement.textContent;
-
-        if (numberWords*COUNT_GAMES*inputs.length > dictionary.words.length) {
+   
+        if (numberWords*COUNT_ROUNDS*inputs.length > dictionary.words.length) {
             isError = true;
             alert('Not enough words to start the game');
         } else {
@@ -210,6 +199,7 @@ function playBtnListener() {
                         guessed: 0,
                         skipped: 0,
                         words: teamWords[i],
+                        team_name: value,
                     };
 
                     localStorage.setItem(value, JSON.stringify(teamsProperties));
@@ -227,7 +217,7 @@ function playBtnListener() {
                 localStorage.setItem('numberWords', numberWords);
                 localStorage.setItem('time', timeGame);
 
-                // generateGame();
+                generateGame();
             }
         }
     });

@@ -5,7 +5,7 @@ async function generateStatistics() {
     const statistics = await Storage.getStatistics();
 
     const tableBody = createElement({tagName: 'tBody'});
-    const columnNames = ['Team name', 'Correct', 'Skipped', 'Game date'];
+    const columnNames = ['Team name', 'Guessed', 'Skipped', 'Game date'];
 
     const headerRow = createElement({tagName: 'tr'});
     columnNames.forEach((name) => {
@@ -15,12 +15,11 @@ async function generateStatistics() {
     const table = createElement({tagName: 'table', classNames: 'table-statistics', children: [headerRow, tableBody]});
 
     statistics.forEach((item) => {
-        console.log(item.correct, item.skipped);
         const cellTeamName = createElement({tagName: 'td', textContent: item.team_name});
-        const cellCorrect = createElement({tagName: 'td', textContent: String(item.correct)});
+        const cellGuessed = createElement({tagName: 'td', textContent: String(item.guessed)});
         const cellSkipped = createElement({tagName: 'td', textContent: String(item.skipped)});
         const cellDate = createElement({tagName: 'td', textContent: new Date(item.game_date).toLocaleString()});
-        const row = createElement({tagName: 'tr', children: [cellTeamName, cellCorrect, cellSkipped, cellDate]});
+        const row = createElement({tagName: 'tr', children: [cellTeamName, cellGuessed, cellSkipped, cellDate]});
         tableBody.append(row);
     });
     

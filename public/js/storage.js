@@ -57,16 +57,20 @@ class Storage {
             });
     }
 
-    addDictionary (name) {
-        return this.database
-            .collection('dictionaries')
-            .add({
-                name,
-                words: [],
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+    addStatistics (statistics) {
+        statistics.forEach((statistic) => {
+            this.database
+                .collection('statistics')
+                .add({
+                    game_date: Date.now(),
+                    guessed: statistic.guessed,
+                    skipped: statistic.guessed,
+                    team_name: statistic.team_name,
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        });
     }
 
     getDictionaryById(id) {
