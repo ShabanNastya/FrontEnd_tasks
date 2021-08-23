@@ -64,7 +64,7 @@ class Storage {
                 .add({
                     game_date: Date.now(),
                     guessed: statistic.guessed,
-                    skipped: statistic.guessed,
+                    skipped: statistic.skipped,
                     team_name: statistic.team_name,
                 })
                 .catch((error) => {

@@ -140,6 +140,34 @@
   align-items: center;
 }
 
+.game-load {
+  margin-top: 100px;
+  text-align: center;
+  align-items: center;
+}
+
+.card-container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.game-container {
+  margin: auto;
+  margin-top: 50px;
+}
+
+.score-container {
+  font-size: 36px;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.cards {
+  position: relative;
+}
+
 .result-container h2 {
   font-size: 36px;
   color:rgb(255, 115, 0);
@@ -160,7 +188,7 @@
 }
 
 .start-container {
-  margin-top: 200px;
+  margin-top: 150px;
   text-align: center;
   align-items: center;
 }
@@ -176,13 +204,29 @@
   color: olivedrab;
 }
 
+.guessed-label {
+  color: olivedrab;
+}
+
+.skipped-label {
+  color: rgb(233, 75, 75);
+}
+
+.cards {
+  min-height: 350px;
+}
+
 custom-card {
+  margin-top: 20px;
+  width: 300px;
+  height: 250px;
+  font-size: 36px;
+  margin-left: -150px;
   position: absolute;
 	background: #FFF;
-	border-radius: 3px;
-	box-shadow: 0 3px 4px rgba(0,0,0,0.3);
-	margin: 20px 0;
-	height: 120px;
+	border-radius: 10px;
+  border: 3px orange solid;
+	margin: 50px 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -219,6 +263,45 @@ custom-card {
 	animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.game-result {
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-result h3 {
+  margin: 10px 0;
+  font-size: 36px;
+}
+
+.game-result p {
+  margin: 3px 0 3px 10px;
+  font-size: 24px;
+}
+
+.game-result span {
+  margin-right: 5px;
+}
+
+.guessed-words h3 {
+  color: olivedrab;
+}
+
+.guessed-words span {
+  color: olivedrab;
+}
+
+.skipped-words h3 {
+  color: rgb(233, 75, 75);
+}
+
+.skipped-words span {
+  color: rgb(233, 75, 75);
+}
+
+
 @keyframes slide-right {
   0% {
     transform: translateX(0);
@@ -242,6 +325,20 @@ custom-card {
 }
 
 @media (max-width: 700px) {
+  .game-result {
+    margin: auto;
+    margin-top: 80px;
+  }
+  
+  .game-result h3 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  .game-result p {
+    font-size: 16px;
+  }
+  
   .state-content {
     width: 90%;
     top: 10%;
@@ -273,5 +370,13 @@ custom-card {
   
   .result-container table {
     font-size: 18px;
+  }
+
+  
+  custom-card {
+    margin-left: 50px;
+    width: 200px;
+    height: 150px;
+    font-size: 24px;
   }
 }

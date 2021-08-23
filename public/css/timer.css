@@ -1,0 +1,91 @@
+.timer {
+  position: relative;
+}
+
+.timer div {
+  margin-top: 10px;
+}
+
+.game-container .timer {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .game-container .timer {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+ }
+}
+
+.game-load .timer {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.timer-svg {
+  transform: scaleX(-1);
+}
+
+.timer-circle {
+  fill: none;
+  stroke: none;
+}
+
+.timer-elapsed {
+  stroke-width: 6px;
+  stroke: rgb(255, 222, 180);
+}
+
+.timer-path {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.timer-path.green {
+  color: #61bd4f;
+}
+
+.timer-path.orange {
+  color: #ff934d;
+}
+.timer-path.red {
+  color: #fe5c55;
+}
+
+.timer-label {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 115, 0);
+  font-size: 48px;
+}
+
+.game-load .timer-label {
+  width: 200px;
+  height: 200px;
+}
+
+.game-container .timer-label {
+  font-size: 35px;
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .game-container .timer-label {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+ }
+}

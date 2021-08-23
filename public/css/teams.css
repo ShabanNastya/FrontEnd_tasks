@@ -70,7 +70,8 @@
     font-weight: bold;
 }
 
-.game-btn {
+.game-btn,
+.continue-btn {
     padding: 10px;
     border-radius: 20px;
     border: 2px solid rgb(255, 115, 0);
@@ -80,6 +81,12 @@
     background-color: white;
     cursor: pointer;
     margin: 10px 0;
+}
+
+.btn-container {
+    margin: auto;
+    text-align: center;
+    margin: 20px 0 80px;
 }
 
 .start-btn, .statistic-btn {
@@ -98,7 +105,7 @@
     width: 250px;
 }
 
-.start-btn:hover, .game-btn:hover, .statistic-btn:hover {
+.start-btn:hover, .game-btn:hover, .statistic-btn:hover, .continue-btn:hover {
     border: none;
     letter-spacing: 2px;
     background: rgb(255, 115, 0);
@@ -164,7 +171,7 @@
         margin: 10px 0 0;
     }
 
-    .start-btn, .game-btn, .statistic-btn  {
+    .start-btn, .game-btn, .statistic-btn, .continue-btn  {
         font-size: 16px;
     }
 
