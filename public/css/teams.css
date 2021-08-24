@@ -106,8 +106,6 @@
 }
 
 .start-btn:hover, .game-btn:hover, .statistic-btn:hover, .continue-btn:hover {
-    border: none;
-    letter-spacing: 2px;
     background: rgb(255, 115, 0);
     color: white;
     cursor: pointer;

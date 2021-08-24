@@ -1,8 +1,4 @@
 
-const navigateTo = url => {
-  history.pushState(null, null, url);
-};
-
 const chunkArray = (myArray, chunk_size) => {
   let index = 0;
   const arrayLength = myArray.length;
@@ -29,4 +25,4 @@ const stopAudio = () => {
   audio.pause();
 }
 
-export { chunkArray, navigateTo, playAudio, stopAudio };
+export { chunkArray, playAudio, stopAudio };

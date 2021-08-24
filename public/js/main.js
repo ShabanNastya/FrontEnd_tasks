@@ -1,5 +1,5 @@
 import createElement from './helper.js';
-import { MAP_ROUTERS } from './router.js';
+import { MAP_ROUTS, navigateTo, ROUTS } from './router.js';
 
 const PAGES = [
     { title: 'Main', route: '/main' },
@@ -18,16 +18,17 @@ function generateHeader(pathname) {
             ['alt', 'logo'],
         ]
     });
-    const title = createElement({tagName: 'h1', classNames: 'heading', textContent: MAP_ROUTERS[pathname]});
+    const title = createElement({tagName: 'h1', classNames: 'heading', textContent: MAP_ROUTS[pathname]});
     const nav = createElement({ tagName: 'nav', classNames: 'navbar mobile-menu'});
     nav.id = 'mobile-menu';
     const ul = createElement({tagName: 'ul', classNames: 'ul-menu' });
 
     PAGES.forEach((page) => {
-        const link = createElement({tagName: 'a', classNames: 'a-menu', textContent: page.title, attrs: [
-            ['href', page.route],
-            ]});
-        const li = createElement({ tagName: 'li', classNames: 'li-menu-item', children: [link]});
+        const li = createElement({ tagName: 'li', classNames: 'li-menu-item a-menu', textContent: page.title });
+
+        li.addEventListener('click', () => {
+            navigateTo(page.route);
+        });
 
         ul.append(li);
     });
@@ -63,7 +64,7 @@ function generateMainPage() {
     main.append(mainContainer);
 
     playBtn.addEventListener('click', () => {
-        window.location.href = '/game';
+        navigateTo(ROUTS.game);
     });
 }
 
@@ -90,7 +91,7 @@ function generateFooter() {
 
 function generateMainContainer() {
     const main = createElement({ tagName: 'main' });
-    document.body.append(main);
+    document.body.prepend(main);
 }
 
 export {
@@ -99,5 +100,3 @@ export {
     generateMainPage,
     generateFooter,
 };
-
-console.log('prepared');

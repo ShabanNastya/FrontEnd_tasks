@@ -1,4 +1,4 @@
-import { ROUTERS } from './router.js';
+import { navigateTo, ROUTS } from './router.js';
 import Storage from './storage.js';
 import createElement from './helper.js';
 import { timer, clearTimer } from './timer.js';
@@ -48,7 +48,7 @@ export async function generateGame() {
     main.append(resultSection);
 
     statisticsBtn.addEventListener('click', () => {
-      location.href = ROUTERS.statistics;
+      navigateTo(ROUTS.statistics);
     });
    
     await Storage.addStatistics(teamsList);
@@ -230,7 +230,7 @@ export class Game {
 
     const word = this.target.getAttribute('word');
 
-    if (this.cards.length) {
+    if (this.cards.length && screenX !== 0) {
       if (screenX > 0) {
         playAudio('../audio/guessed.mp3');
         this.team.guessed += 1;

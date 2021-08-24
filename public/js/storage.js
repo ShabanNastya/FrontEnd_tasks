@@ -73,6 +73,18 @@ class Storage {
         });
     }
 
+    addDictionary (name) {
+        this.database
+            .collection('dictionaries')
+            .add({
+                name,
+                words: [],
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
     getDictionaryById(id) {
         return this.database.collection('dictionaries').doc(id).get()
             .then((snapshot) => {

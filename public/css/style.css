@@ -71,6 +71,10 @@ main {
     color: #fff;
 }
 
+.a-menu:hover {
+    cursor: pointer;
+}
+
 .menu-link {
     font-size: 2rem;
     color: #fff;
