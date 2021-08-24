@@ -1,0 +1,30 @@
+
+.field {
+    text-align: center;
+    padding: 20px;
+}
+
+.statistics-text {
+    padding-bottom: 20px;
+    color: olivedrab;
+}
+
+.statistics {
+    font-size: 20px;
+}
+
+.table-statistics {
+    text-align: start;
+    margin: auto;
+}
+
+.table-statistics td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+@media (min-width:700px) {
+    .statistics {
+        font-size: 18px;
+    }
+}
